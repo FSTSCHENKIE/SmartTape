@@ -32,7 +32,7 @@ namespace Delta
             Request(GetHashKey("prop_cordon_tape"));
             TriggerEvent("chat:addSuggestion", "/tape", "Opens the tape management menu");
             ReadConfig();
-            RegisterKeyMapping("tape", "Opens the tape management menu");
+            //RegisterKeyMapping("tape", "Opens the tape management menu", "KEYBOARD", "F1d0");
         }
 
         private async void Request(int model)
