@@ -20,9 +20,9 @@ namespace Delta
 
         public static float direction;
 
-        public static string tape1Name = "Police Tape";
+        public static string tape1Name = "Polizeiabsperrung";
         public static string tape2Name = "Inner Cordon Tape";
-        public static string tape3Name = "Fire Tape";
+        public static string tape3Name = "Feuerwehrabsperrung";
 
         // Made by London Studios
         public Main()
@@ -32,7 +32,7 @@ namespace Delta
             Request(GetHashKey("prop_cordon_tape"));
             TriggerEvent("chat:addSuggestion", "/tape", "Opens the tape management menu");
             ReadConfig();
-            RegisterKeyMapping("tape", "Opens the tape management menu", "KEYBOARD", "F10");
+            RegisterKeyMapping("tape", "Opens the tape management menu");
         }
 
         private async void Request(int model)
@@ -108,7 +108,7 @@ namespace Delta
                     {
                         index = location.Key;
                     }
-                    DisplayTopNotification("Press ~INPUT_PICKUP~ to stop moving the tape.");
+                    DisplayTopNotification("Drücke ~INPUT_PICKUP~ um das Absperrband zu platzieren.");
                     var entity = objects[index][0];
                     var coords = new Vector3(0, 0, 0);
                     var height = 0.2f;
@@ -154,7 +154,7 @@ namespace Delta
                     SetEntityCoords(entity, coords.X, coords.Y, position.Z + height, true, true, true, false);
                     var oldLocation = locations[index];
                     locations[index] = coords;
-                    DisplayTopNotification("Tape moved.");
+                    DisplayTopNotification("Absperrband platziert.");
 
                     break;
                 }
@@ -177,7 +177,7 @@ namespace Delta
 
                     SetEntityVisible(entity, false, false);
                     DeleteEntity(ref entity);
-                    DisplayTopNotification("Tape deleted");
+                    DisplayTopNotification("Absperrband entfernt");
                     objects.Remove(index);
                     locations.Remove(index);
                     break;

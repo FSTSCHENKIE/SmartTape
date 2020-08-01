@@ -22,7 +22,7 @@ namespace Delta
                 MouseEdgeEnabled = false,
                 ControlDisablingEnabled = false
             };
-            mainMenu = new UIMenu("Smart Tape", "Manage tape")
+            mainMenu = new UIMenu("Absperrband", "Absperrungen verwalten")
             {
                 MouseControlsEnabled = false,
                 ControlDisablingEnabled = false
@@ -51,27 +51,27 @@ namespace Delta
 
         private static void TapeMenu(UIMenu menu)
         {
-            var newTape = menuPool.AddSubMenu(menu, "Create new tape");
+            var newTape = menuPool.AddSubMenu(menu, "Neues Absperrband aufspannen");
             newTape.MouseControlsEnabled = false;
             newTape.ControlDisablingEnabled = false;
-            var length = new UIMenuSliderProgressItem("Tape Length", 35, 10);
+            var length = new UIMenuSliderProgressItem("Absperrbandlänge", 35, 10);
             newTape.AddItem(length);
 
-            var policeTape = new UIMenuItem(Main.tape1Name, $"Place {Main.tape1Name} tape down");
+            var policeTape = new UIMenuItem(Main.tape1Name, $"Platziere {Main.tape1Name} ");
             newTape.AddItem(policeTape);
 
-            var innerCordonTape = new UIMenuItem(Main.tape2Name, $"Place {Main.tape2Name} tape down");
+            var innerCordonTape = new UIMenuItem(Main.tape2Name, $"Platziere {Main.tape2Name} ");
             newTape.AddItem(innerCordonTape);
 
-            var fireTape = new UIMenuItem(Main.tape3Name, $"Place {Main.tape3Name} tape down");
+            var fireTape = new UIMenuItem(Main.tape3Name, $"Platziere {Main.tape3Name} ");
             newTape.AddItem(fireTape);
 
-            var manageTapes = menuPool.AddSubMenu(menu, "Manage tapes");
+            var manageTapes = menuPool.AddSubMenu(menu, "Absperrungen verwalten");
 
-            var moveTape = new UIMenuItem("Move Tape", "Move a nearby tape");
+            var moveTape = new UIMenuItem("Platziere Absperrband", "Platziere das Absperrband");
             manageTapes.AddItem(moveTape);
 
-            var deleteTape = new UIMenuItem("Delete Tape", "Delete a nearby tape");
+            var deleteTape = new UIMenuItem("Absperrband entfernen", "Absperrband entfernen");
             manageTapes.AddItem(deleteTape);
 
             manageTapes.MouseControlsEnabled = false;
