@@ -1,3 +1,9 @@
+# Änderung von FSTSCHENKIE
+Übersetzt + F10 entfernt
+Absperrungsnamen geändert
+
+
+
 ![SmartTape](https://i.imgur.com/LMoIHAc.png)
 
 # SmartTape - London Studios
